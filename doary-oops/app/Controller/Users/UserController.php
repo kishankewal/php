@@ -1,7 +1,7 @@
 <?php
 namespace App\Controller\Users;
 
-class Users {
+class UserController {
     public function save($userPopo) {
         print_r($userPopo);
     }

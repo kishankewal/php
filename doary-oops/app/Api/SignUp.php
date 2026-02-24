@@ -1,15 +1,34 @@
 <?php
 namespace App\Api;
 
-require_once "../Model/Users/Users.php";
-require_once "../Controller/Users/Users.php";
+class ParentClass {
+    private $name = "Kishan";
+}
 
-use App\Controller\Users\Users as UserController;
-use App\Model\Users\Users as UserModel;
+class ChildClass extends ParentClass {
+    public function getName() {
+        return $this->name;
+    }
+}
 
-$userModel = new UserModel;
-$userModel->insert($_POST);
+$childClass = new ChildClass;
+$childClass->getName();
+// require_once "../Controller/Users/UserController.php";
+// require_once "../Utils/Utils.php";
 
-$userController = new UserController;
-$userController->save($_POST);
+
+// use App\Controller\Users\UserController;
+// use App\Utils\Utils;
+
+// class AllMethods {
+//     use Utils;
+// }
+
+// $methods = new AllMethods;
+// echo $methods->getCurrentTimeStamp();
+// echo "\n";
+// echo $methods->getIpAddress();
+
+// $userController = new UserController;
+// $userController->save($_POST);
 
